@@ -1,23 +1,21 @@
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-
-import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> primes = new ArrayList<Integer>(); //creates List that gets from a new ArrayList
+        ArrayList<Integer> primes = new ArrayList<>(); //creates List that gets from a new ArrayList
         int count = 0;
         int number =2;
 
         while (count < 100) {
-            if (isPrime(number) == true) {
+            if (isPrime(number)) {
                 primes.add(number);
                 count++;
             }
             number++;
         }
         Iterator<Integer> s = primes.iterator();
+        //noinspection WhileLoopReplaceableByForEach
         while (s.hasNext()){
             System.out.println(s.next());
         }
