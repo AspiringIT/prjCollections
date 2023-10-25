@@ -6,7 +6,7 @@ import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> primes = new ArrayList<>(); //creates List that gets from a new ArrayList
+        ArrayList<Integer> primes = new ArrayList<Integer>(); //creates List that gets from a new ArrayList
         int count = 0;
         int number =2;
 
@@ -17,10 +17,13 @@ public class Main {
             }
             number++;
         }
-
-        for (Integer prime : primes) {//prints the list of prime numbers
-            System.out.println(prime);
+        Iterator<Integer> s = primes.iterator();
+        while (s.hasNext()){
+            System.out.println(s.next());
         }
+       /* for (Integer prime : primes) {//prints the list of prime numbers
+            System.out.println(prime);
+        }*/
         System.out.println("The size is " + primes.size());//prints out the size for the list
     }
 
