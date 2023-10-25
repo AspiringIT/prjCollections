@@ -1,17 +1,43 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import static java.lang.System.exit;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        List<Integer> primes = new ArrayList<>(); //creates List that oulld from ArrayList
+        int count = 0;
+        int number =1;
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
+        while (count < 100) {
+            if (isPrime(number) == true) {
+                primes.add(number);
+                count++;
+            }
+            else
+                exit(6);
+            number++;
         }
+
+        for (Integer prime : primes) {
+            System.out.println(prime);
+        }
+        System.out.println("The size is " + primes.size());
+    }
+
+    public static boolean isPrime(int num) {
+        if (num < 2) {
+            System.out.println("You are supposed to start at the number 2");
+            return false;
+        }
+//this checks to see if it has any other factors
+        for ( int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i ==0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
