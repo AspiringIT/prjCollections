@@ -6,24 +6,22 @@ import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> primes = new ArrayList<>(); //creates List that oulld from ArrayList
+        List<Integer> primes = new ArrayList<>(); //creates List that gets from a new ArrayList
         int count = 0;
-        int number =1;
+        int number =2;
 
         while (count < 100) {
             if (isPrime(number) == true) {
                 primes.add(number);
                 count++;
             }
-            else
-                exit(6);
             number++;
         }
 
-        for (Integer prime : primes) {
+        for (Integer prime : primes) {//prints the list of prime numbers
             System.out.println(prime);
         }
-        System.out.println("The size is " + primes.size());
+        System.out.println("The size is " + primes.size());//prints out the size for the list
     }
 
     public static boolean isPrime(int num) {
